@@ -1,0 +1,25 @@
+{
+  "name": "simple_ecommenrce",
+  "version": "1.0.0",
+  "description": "A Simple Ecommerce using Nodejs , Expressjs , MongoDB and Elasticsearch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezamlee/Simple-E-commerce.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "search",
+    "filter",
+    "simple"
+  ],
+  "author": "Ahmed M. Essam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezamlee/Simple-E-commerce/issues"
+  },
+  "homepage": "https://github.com/ezamlee/Simple-E-commerce#readme"
+}
