@@ -14,7 +14,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),
 app.use(morgan('dev', {stream: accessLogStream}))
 app.use(morgan('dev'));
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public/searchApp/dist/searchApp'))
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
