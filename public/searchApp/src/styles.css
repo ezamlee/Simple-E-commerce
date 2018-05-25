@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0px;
+  padding: 5px;
+}
+
+.col-md-3 {
+  padding-top: 5px;
+}
+.row{
+  margin: 0px!important;
+}
