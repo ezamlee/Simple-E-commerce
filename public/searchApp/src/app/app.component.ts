@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { SearchService } from './search.service';
 import { Component } from '@angular/core';
 import * as $ from 'jquery';
 import { OnInit } from '@angular/core';
@@ -7,11 +9,16 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  data = [1,2,3,4,5,6,7,8,9,10,11];
+  data :object = [];
+  filter :object = {};
 
-  constructor() { }
+  constructor(private search :SearchService) {  }
+  
   ngOnInit() {
-
+    this.search.getData({}).subscribe( data => {
+      this.data = data;
+    })
   }
+
+  
 }

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FiltersComponent implements OnInit {
   categories = [1,2,3,4,5,6,7]
   brands = [1,2,3,4]
+  sortable = ['name','brand','price','category']
 
   filterObject = {
     price : {

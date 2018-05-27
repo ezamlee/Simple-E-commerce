@@ -29,3 +29,16 @@
   <label for="myRange"><span>to {{filterObject.price.to}} $</span></label><br>
   <input type="range" min="5" max="10000"  [(ngModel)]="filterObject.price.to" #ctrl="ngModel" class="slider" id="myRange">
 </div>
+<br>
+<hr>
+<br>
+<h3>Sort By</h3>
+<div class="form-check" *ngFor="let item of sortable">
+  <input class="form-check-input" type="radio" name="categories" id="{{ item }}" value="{{ item }}">
+  <label class="form-check-label" for="{{ item }}">
+    Sort By  {{ item }}
+  </label>
+</div>
+<br>
+<hr>
+<br>

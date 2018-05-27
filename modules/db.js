@@ -28,6 +28,11 @@ async function find(options) {
             let fieldName = item[0],lower = parseInt(item[1]),upper = parseInt(item[2] || item[1]);
             query[item[0]] = {'$lte': upper,'$gte': lower,}
           }
+          else if(item.length == 2 && data[item[0]] == 'string'){
+            let fieldName = item[0];
+            let value = item[1];
+            query[item[0]] = item[1];
+          }
       })
     }
 
