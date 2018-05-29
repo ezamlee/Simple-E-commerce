@@ -42,7 +42,6 @@ export class FiltersComponent implements OnInit {
 
   itemClick(fieldName , value ){
     this.filterObject['query'][fieldName] = value
-    console.log(this.filterObject)
     this.onDataChange.emit(this.filterObject);
   }
   itemRemove(fieldName){

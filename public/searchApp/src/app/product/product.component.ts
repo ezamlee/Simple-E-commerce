@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.inputData;
-] }
+ }
   ngOnChanges(){
   }
 

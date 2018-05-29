@@ -17,11 +17,18 @@ async function find(options) {
   if(options.data){
     options.data = JSON.parse(options.data)
   }
-  console.log(options.data.query,options.data.sort)
-  return  (await getConnection('products'))
-    .find(options.data.query)
-    .sort(options.data.sort)
-    .toArray()
+  if(options.data){
+    return  (await getConnection('products'))
+      .find(options.data.query || {})
+      .sort(options.data.sort || {})
+      .toArray()
+  }
+  else {
+    return  (await getConnection('products'))
+      .find({})
+      .sort({})
+      .toArray()
+  }
 }
 async function getLimits(fieldName){
   if(data[fieldName] != 'number') throw 'only numbers are supported for limits'
