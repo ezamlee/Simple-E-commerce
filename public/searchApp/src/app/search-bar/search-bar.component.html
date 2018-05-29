@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-lg-10" style="margin:0 auto;padding-top:50px">
     <div class="input-group input-group-lg">
-      <input type="text" class="form-control" size="200" placeholder="Search for...">
+      <input [(ngModel)]="query" type="text" class="form-control" size="200" placeholder="Search for..." (keydown)="keyDownFunction($event)">
       <span class="input-group-btn">
-          <button class="btn btn-lg btn-primary" type="button">Go Fetch</button>
+          <button class="btn btn-lg btn-primary" type="button" (click)="submitQuery()">Go Fetch</button>
         </span>
     </div>
   </div>

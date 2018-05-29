@@ -1,13 +1,13 @@
 <div class="col-md-3">
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41%2BMZ4466KL.jpg" alt="Card image cap">
+    <img class="card-img-top" src="{{ data.image }}" alt="Card image cap" height="300" width="300">
     <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p style="height:80px" class="card-text">{{ data.name }}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Price 300 $</li>
-      <li class="list-group-item">Brand Apple</li>
-      <li class="list-group-item">Category Mobile Phones</li>
+      <li class="list-group-item">Price: {{ data.price }} $</li>
+      <li class="list-group-item">Brand: {{ data.brand  }}</li>
+      <li class="list-group-item">Category: {{ data.category.name }}</li>
     </ul>
   </div>
 </div>

@@ -1,14 +1,14 @@
 <div class="row" style="height : 150px">
-  <app-search-bar></app-search-bar>
+  <app-search-bar (onQuery)="addQuery($event)"></app-search-bar>
 </div>
 <div class="row">
   <div class="col-md-2" style="padding:20px">
-    <app-filters></app-filters>
+    <app-filters (onDataChange)="registerFilter($event)"></app-filters>
   </div>
   <div class="col-md-10" >
     <div class="row">
       <div *ngFor="let item of data">
-        <app-product>
+        <app-product [inputData]="item">
         </app-product>
       </div>
     </div>

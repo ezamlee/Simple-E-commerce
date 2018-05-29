@@ -1,8 +1,14 @@
 <h3>Brands</h3>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="brands" id="all" value="{{ null }}" (click)="itemRemove('brand')" [(ngModel)]="brand">
+  <label class="form-check-label" for="all">
+    All
+  </label>
+</div>
 <div class="form-check" *ngFor="let item of brands">
-  <input class="form-check-input" type="radio" name="brands" id="{{ item }}" value="{{ item }}" >
+  <input class="form-check-input" type="radio" name="brands" id="{{ item }}" value="{{ item }}" (click)="itemClick('brand',item)" [(ngModel)]="brand">
   <label class="form-check-label" for="{{ item }}">
-    Name of brand {{ item }}
+    {{ item }}
   </label>
 </div>
 <br>
@@ -10,33 +16,41 @@
 <br>
 
 <h3>Categories</h3>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="categories" id="all" value="{{ null }}" (click)="itemRemove('category.name')" [(ngModel)]="category">
+  <label class="form-check-label" for="all">
+    All
+  </label>
+</div>
 <div class="form-check" *ngFor="let item of categories">
-  <input class="form-check-input" type="radio" name="categories" id="{{ item }}" value="{{ item }}">
+  <input class="form-check-input" type="radio" name="categories" id="{{ item }}" value="{{ item }}"  (click)="itemClick('category.name',item)"  >
   <label class="form-check-label" for="{{ item }}">
-    Name of Category {{ item }}
+    {{ item }}
   </label>
 </div>
 <br>
 <hr>
 <br>
 
+
 <h3>Price</h3>
 <div class="slidecontainer">
-  <label for="myRange"><span>From {{filterObject.price.from}} $</span></label><br>
-  <input type="range" min="5" max="10000"  [(ngModel)]="filterObject.price.from" #ctrl="ngModel" class="slider" id="myRange">
+  <label for="myRange"><span>From {{priceFrom}} $</span></label><br>
+  <input type="range" min="0" max="10000" step="10" (change)='addPriceFilter()' [(ngModel)]="priceFrom" class="slider" id="myRange">
 </div>
 <div class="slidecontainer">
-  <label for="myRange"><span>to {{filterObject.price.to}} $</span></label><br>
-  <input type="range" min="5" max="10000"  [(ngModel)]="filterObject.price.to" #ctrl="ngModel" class="slider" id="myRange">
+  <label for="myRange"><span>to {{priceTo}} $</span></label><br>
+  <input type="range" min="0" max="10000" step="10" (change)='addPriceFilter()' class="slider" [(ngModel)]="priceTo" id="myRange">
 </div>
 <br>
 <hr>
 <br>
+
 <h3>Sort By</h3>
 <div class="form-check" *ngFor="let item of sortable">
-  <input class="form-check-input" type="radio" name="categories" id="{{ item }}" value="{{ item }}">
+  <input class="form-check-input" type="radio" name="sortby" id="{{ item }}"  value="{{ item }}"  (click)="addSort(item)" >
   <label class="form-check-label" for="{{ item }}">
-    Sort By  {{ item }}
+    {{ item }}
   </label>
 </div>
 <br>

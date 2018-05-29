@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-
+  query = "";
   constructor() { }
 
   ngOnInit() {
   }
+  @Output() onQuery = new EventEmitter<boolean>();
+
+  submitQuery(){
+    this.onQuery.emit(this.query);
+  }
+  keyDownFunction(event) {
+  if(event.keyCode == 13) {
+    this.onQuery.emit(this.query);
+  }
+}
 
 }
