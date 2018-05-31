@@ -19,7 +19,7 @@ export class FiltersComponent implements OnInit {
   priceTo = 10000;
   sortby = name;
 
-  @Output() onDataChange = new EventEmitter<boolean>();
+  @Output() onDataChange: any = new EventEmitter<boolean>();
 
 
   filterObject = {
@@ -30,17 +30,17 @@ export class FiltersComponent implements OnInit {
    constructor(private http : Http) { }
 
   ngOnInit() {
-    this.http.get(this.baseUrl+'category.name').subscribe( data => {
+    this.http.get(this.baseUrl+'category.name').subscribe( (data: any) => {
       this.categories = JSON.parse(data._body).message
     })
-    this.http.get(this.baseUrl+'brand').subscribe( data => {
+    this.http.get(this.baseUrl+'brand').subscribe( (data: any) => {
       this.brands = JSON.parse(data._body).message
     })
   }
   ngOnChange() {
   }
 
-  itemClick(fieldName , value ){
+  itemClick(fieldName: any , value: any ){
     this.filterObject['query'][fieldName] = value
     this.onDataChange.emit(this.filterObject);
   }

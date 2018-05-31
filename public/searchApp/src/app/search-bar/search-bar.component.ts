@@ -11,7 +11,7 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Output() onQuery = new EventEmitter<boolean>();
+  @Output() onQuery: any = new EventEmitter<boolean>();
 
   submitQuery(){
     this.onQuery.emit(this.query);

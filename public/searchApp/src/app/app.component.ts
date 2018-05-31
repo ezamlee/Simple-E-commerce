@@ -10,8 +10,8 @@ import { OnInit } from '@angular/core';
   providers:[SearchService]
 })
 export class AppComponent implements OnInit {
-  data :object = [];
-  filter :object = {};
+  data :any = [];
+  filter :any = {};
 
   constructor(private search :SearchService) {  }
 
